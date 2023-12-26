@@ -35,3 +35,26 @@
 
 ;; Kill whole line and newline with C-k if at beginning of line
 ; (setq kill-whole-line t)
+
+;; Comment regione
+(global-set-key (kbd "C-c C-c") 'comment-region)
+(global-set-key (kbd "C-u C-c C-c") 'uncomment-region)
+
+;; Sidebar
+(use-package dired-sidebar
+  :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :init
+  (add-hook 'dired-sidebar-mode-hook
+            (lambda ()
+              (unless (file-remote-p default-directory)
+                (auto-revert-mode))))
+  :config
+  (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
+  (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
+
+  (setq dired-sidebar-subtree-line-prefix "__")
+  (setq dired-sidebar-theme 'vscode)
+  (setq dired-sidebar-use-term-integration t)
+  (setq dired-sidebar-use-custom-font t))

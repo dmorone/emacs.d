@@ -38,7 +38,7 @@
 
 ;; Comment regione
 (global-set-key (kbd "C-c C-c") 'comment-region)
-(global-set-key (kbd "C-u C-c C-c") 'uncomment-region)
+;; (global-set-key (kbd "C-u C-c C-c") 'uncomment-region)
 
 ;; Sidebar
 (use-package dired-sidebar

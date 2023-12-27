@@ -1,12 +1,19 @@
 (use-package eglot
   :ensure t
-  :config
-  (add-hook 'bash-mode-hook 'eglot-ensure)
-  (add-hook 'cc-mode-hook 'eglot-ensure)
-  (add-hook 'c++-mode-hook 'eglot-ensure)
-  (add-hook 'python-mode-hook 'eglot-ensure)
-  (add-hook 'java-mode-hook 'eglot-ensure)
-  (add-hook 'html-mode-hook 'eglot-ensure)
-  (add-hook 'css-mode-hook 'eglot-ensure)
-  (add-hook 'json-mode-hook 'eglot-ensure))
-
+  :hook (c-mode          ; clangd
+         c++-mode        ; clangd
+         c-or-c++-mode   ; clangd
+         java-mode       ; eclipse-jdtls
+         js-mode         ; ts-ls (tsserver wrapper)
+         js-jsx-mode     ; ts-ls (tsserver wrapper)
+         typescript-mode ; ts-ls (tsserver wrapper)
+         python-mode     ; pylsp
+         web-mode        ; ts-ls/HTML/CSS
+         haskell-mode    ; haskell-language-server
+         ))
+;; powershell config TDB
+  ;; :config
+  ;; (with-eval-after-load 'eglot
+  ;; (add-to-list 'eglot-server-programs
+  ;;              '(powershell . ("fools" "--stdio")))))
+ 

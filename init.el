@@ -60,9 +60,7 @@
 (load "~/.emacs.d/settings/server.el")
 
 (load "~/.emacs.d/settings/git.el")
-;; (load "~/.emacs.d/settings/groovy.el")
-;; (load "~/.emacs.d/settings/jenkinsfile.el")
-(load "~/.emacs.d/settings/language-servers.el")
+(load "~/.emacs.d/settings/jenkinsfile.el")
 (load "~/.emacs.d/settings/markdown.el")
 (load "~/.emacs.d/settings/powershell.el")
 

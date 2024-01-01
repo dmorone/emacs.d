@@ -253,3 +253,7 @@ If FRAME is omitted or nil, use currently selected frame."
 ;; Show column number
 (column-number-mode 1)
 
+(use-package nyan-mode
+  :ensure t
+  :init
+  (nyan-mode))

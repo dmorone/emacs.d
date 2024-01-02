@@ -63,5 +63,6 @@
 (load "~/.emacs.d/settings/jenkinsfile.el")
 (load "~/.emacs.d/settings/markdown.el")
 (load "~/.emacs.d/settings/powershell.el")
+(load "~/.emacs.d/settings/web-modes.el")
 
 

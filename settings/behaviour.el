@@ -47,3 +47,7 @@
   (setq dired-sidebar-theme 'vscode)
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))
+
+; page navigation without arrows
+(global-set-key (kbd "M-<down>") 'scroll-up-command)
+(global-set-key (kbd "M-<up>") 'scroll-down-command)

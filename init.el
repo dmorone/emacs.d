@@ -59,6 +59,7 @@
 (load "~/.emacs.d/settings/mac.el")
 (load "~/.emacs.d/settings/server.el")
 
+(load "~/.emacs.d/settings/orgmode.el")
 (load "~/.emacs.d/settings/git.el")
 (load "~/.emacs.d/settings/company.el")
 (load "~/.emacs.d/settings/jenkinsfile.el")

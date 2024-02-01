@@ -71,6 +71,10 @@
 (set-face-attribute 'default nil
                     :height 120)
 
+(when (string= (system-name) "IRB-1182")
+  (set-face-attribute 'default nil
+                    :height 100))
+
 (use-package frame
   :defer
   :init

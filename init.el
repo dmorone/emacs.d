@@ -71,9 +71,5 @@
 (load "~/.emacs.d/settings/powershell.el")
 (load "~/.emacs.d/settings/web-modes.el")
 (load "~/.emacs.d/settings/r.el")
-<<<<<<< HEAD
-(load "~/.emacs.d/settings/yaml.el")
-=======
 (load "~/.emacs.d/settings/yaml.el")
 (load "~/.emacs.d/settings/macros.el")
->>>>>>> origin/main

@@ -220,6 +220,9 @@ If FRAME is omitted or nil, use currently selected frame."
                     (set-face-attribute atom nil
                                         :underline underline)))))))
 
+;; Alternative theme
+;; (load-theme 'basic)
+
 (use-package moody
   :ensure t
   :config

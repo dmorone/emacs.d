@@ -52,6 +52,10 @@
 (require 'use-package)
 ;; (setq use-package-verbose t)
 
+;; load stuff in elisp folder
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elisp/")
+(setq custom-theme-directory "~/.emacs.d/themes")
+
 ;;;; Load settings
 (load "~/.emacs.d/settings/appearance.el")
 (load "~/.emacs.d/settings/backups.el")
@@ -67,3 +71,4 @@
 (load "~/.emacs.d/settings/powershell.el")
 (load "~/.emacs.d/settings/web-modes.el")
 (load "~/.emacs.d/settings/r.el")
+(load "~/.emacs.d/settings/yaml.el")

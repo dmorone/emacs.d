@@ -9,7 +9,7 @@
 
 (use-package menu-bar
   ;; No need to confirm killing buffers.
-  :bind ("C-x k" . kill-this-buffer))
+  :bind ("C-x k" . kill-current-buffer))
 
 (use-package face-remap
   :bind(("C-+" . text-scale-increase)
@@ -51,3 +51,4 @@
 ; page navigation without arrows
 (global-set-key (kbd "M-<down>") 'scroll-up-command)
 (global-set-key (kbd "M-<up>") 'scroll-down-command)
+

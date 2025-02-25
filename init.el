@@ -61,11 +61,10 @@
 (load "~/.emacs.d/settings/backups.el")
 (load "~/.emacs.d/settings/behaviour.el")
 (load "~/.emacs.d/settings/mac.el")
-(load "~/.emacs.d/settings/server.el")
 
+(load "~/.emacs.d/settings/completion.el")
 (load "~/.emacs.d/settings/orgmode.el")
 (load "~/.emacs.d/settings/git.el")
-(load "~/.emacs.d/settings/company.el")
 (load "~/.emacs.d/settings/jenkinsfile.el")
 (load "~/.emacs.d/settings/markdown.el")
 (load "~/.emacs.d/settings/powershell.el")
@@ -73,3 +72,5 @@
 (load "~/.emacs.d/settings/r.el")
 (load "~/.emacs.d/settings/yaml.el")
 (load "~/.emacs.d/settings/macros.el")
+(load "~/.emacs.d/settings/csv.el")
+(load "~/.emacs.d/settings/haskell.el")

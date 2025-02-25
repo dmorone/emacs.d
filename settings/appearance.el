@@ -47,7 +47,7 @@
     (setq cursor-type nil)
     (read-only-mode +1)
     (switch-to-buffer (current-buffer))
-    (local-set-key (kbd "q") 'kill-this-buffer)))
+    (local-set-key (kbd "q") 'kill-current-buffer)))
 
 (setq initial-scratch-message nil)
 (setq inhibit-startup-screen t)
@@ -71,9 +71,6 @@
 (set-face-attribute 'default nil
                     :height 120)
 
-(when (string= (system-name) "IRB-1182")
-  (set-face-attribute 'default nil
-                    :height 100))
 
 (use-package frame
   :defer
@@ -97,12 +94,6 @@ If FRAME is omitted or nil, use currently selected frame."
     (modify-frame-parameters
      frame '((user-position . t) (top . 0.5) (left . 0.5)))))
   (my/frame-recenter))
-
-
-;; Used when exporting org source blocks.
-(use-package github-theme
-  :defer
-  :ensure t)
 
 (use-package material-theme
   :ensure t

@@ -52,3 +52,7 @@
 (global-set-key (kbd "M-<down>") 'scroll-up-command)
 (global-set-key (kbd "M-<up>") 'scroll-down-command)
 
+(add-hook 'prog-mode-hook
+          (lambda() (local-set-key (kbd "C-<") #'comment-region)))
+(add-hook 'prog-mode-hook
+          (lambda() (local-set-key (kbd "C->") #'uncomment-region)))

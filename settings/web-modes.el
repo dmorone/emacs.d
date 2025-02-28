@@ -9,8 +9,15 @@
   :mode (("\\.html\\'" . web-mode)
          ("\\.php\\'" . web-mode)))
 
+;;;; Web debug
 
-;; Using impatient-mode
+;; set root folder for httpd server as current buffer folder
+(setq httpd-root default-directory)
+
+;; M-x httpd-start
+;; start on these files
+
+;;;; Using impatient-mode
 ;; Enable the web server provided by simple-httpd:
 
 ;; M-x httpd-start

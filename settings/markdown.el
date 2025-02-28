@@ -15,7 +15,8 @@
   :config
   (defun ar/markdown-mode-hook ()
     "Called when entering `markdown-mode'."
-    (set-fill-column 80))
+    (set-fill-column 80)
+    (markdown-toggle-inline-images))
 
   (defun adviced:markdown-demote (orig-fun &rest r)
     ;; If not on anything, demote as header.

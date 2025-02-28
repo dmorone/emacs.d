@@ -1,3 +1,4 @@
+
 (use-package org
   :mode ("\\.org\\'" . org-mode)
   :custom
@@ -26,6 +27,8 @@
 
   ;; All Org leading stars become invisible.
   (org-hide-leading-stars t)
+  ;; Hide emphasis markers such as ** /../ etc.
+  (org-hide-emphasis-markers t)
 
     ;; Enable RET to follow Org links.
   (org-return-follows-link t)

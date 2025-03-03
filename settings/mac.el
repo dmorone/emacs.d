@@ -24,10 +24,11 @@
     "Use \"trash\" to move FILE to the system trash."
     (cl-assert (executable-find "trash") nil "'trash' must be installed. Needs \"brew install trash\"")
     (call-process "trash" nil 0 nil "-F"  file))
-
+  
   (use-package ns-win
     ;; Easily insert # on macOS/Swiss German keyboard.
     ;; https://coffeeandcode.neocities.org/emacs-keyboard-config-on-mac.html
+    :bind ("M-2" . dm/macos-insert-at)
     :bind ("M-3" . ar/macos-insert-hash)
     :bind ("M-7" . dm/macos-insert-backslash)
     :bind ("M-n" . dm/macos-insert-tilde)
@@ -40,6 +41,9 @@
     (defun ar/macos-insert-hash ()
       (interactive)
       (insert "#"))
+    (defun dm/macos-insert-at ()
+      (interactive)
+      (insert "@"))
     (defun dm/macos-insert-backslash ()
       (interactive)
       (insert "\\"))

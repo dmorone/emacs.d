@@ -7,3 +7,6 @@ elpa/
 ido.last
 transient/
 games/
+custom.el
+tree-sitter
+tree-sitter-last-update

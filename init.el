@@ -52,20 +52,30 @@
 (require 'use-package)
 ;; (setq use-package-verbose t)
 
+;; load stuff in elisp folder
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elisp/")
+(setq custom-theme-directory "~/.emacs.d/themes")
+
 ;;;; Load settings
+;; Essentials
 (load "~/.emacs.d/settings/appearance.el")
 (load "~/.emacs.d/settings/backups.el")
 (load "~/.emacs.d/settings/behaviour.el")
 (load "~/.emacs.d/settings/mac.el")
-(load "~/.emacs.d/settings/server.el")
-
+;; Built-in
+(load "~/.emacs.d/settings/completion.el")
 (load "~/.emacs.d/settings/orgmode.el")
 (load "~/.emacs.d/settings/git.el")
-(load "~/.emacs.d/settings/company.el")
+;; Plugins
 (load "~/.emacs.d/settings/jenkinsfile.el")
 (load "~/.emacs.d/settings/markdown.el")
 (load "~/.emacs.d/settings/powershell.el")
 (load "~/.emacs.d/settings/web-modes.el")
 (load "~/.emacs.d/settings/r.el")
-
+(load "~/.emacs.d/settings/yaml.el")
 (load "~/.emacs.d/settings/macros.el")
+(load "~/.emacs.d/settings/csv.el")
+(load "~/.emacs.d/settings/haskell.el")
+(load "~/.emacs.d/settings/rust.el")
+(load "~/.emacs.d/settings/flycheck.el")
+(load "~/.emacs.d/settings/tree-sitter.el")

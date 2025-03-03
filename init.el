@@ -57,14 +57,16 @@
 (setq custom-theme-directory "~/.emacs.d/themes")
 
 ;;;; Load settings
+;; Essentials
 (load "~/.emacs.d/settings/appearance.el")
 (load "~/.emacs.d/settings/backups.el")
 (load "~/.emacs.d/settings/behaviour.el")
 (load "~/.emacs.d/settings/mac.el")
-
+;; Built-in
 (load "~/.emacs.d/settings/completion.el")
 (load "~/.emacs.d/settings/orgmode.el")
 (load "~/.emacs.d/settings/git.el")
+;; Plugins
 (load "~/.emacs.d/settings/jenkinsfile.el")
 (load "~/.emacs.d/settings/markdown.el")
 (load "~/.emacs.d/settings/powershell.el")
@@ -74,3 +76,6 @@
 (load "~/.emacs.d/settings/macros.el")
 (load "~/.emacs.d/settings/csv.el")
 (load "~/.emacs.d/settings/haskell.el")
+(load "~/.emacs.d/settings/rust.el")
+(load "~/.emacs.d/settings/flycheck.el")
+(load "~/.emacs.d/settings/tree-sitter.el")

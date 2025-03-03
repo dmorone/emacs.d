@@ -25,9 +25,14 @@
 ;; Kill whole line and newline with C-k if at beginning of line
 ; (setq kill-whole-line t)
 
-;; Comment regione
-(global-set-key (kbd "C-c C-c") 'comment-region)
-;; (global-set-key (kbd "C-u C-c C-c") 'uncomment-region)
+;; Comment region
+(add-hook 'prog-mode-hook
+          (lambda() (local-set-key (kbd "C-<") #'comment-region)))
+(add-hook 'prog-mode-hook
+          (lambda() (local-set-key (kbd "C->") #'uncomment-region)))
+
+;; Dired
+(setq dired-create-destination-dirs 'ask) ; ask before creating a new folder
 
 ;; Sidebar
 (use-package dired-sidebar
@@ -43,16 +48,10 @@
   (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
   (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
 
-  (setq dired-sidebar-subtree-line-prefix "__")
-  (setq dired-sidebar-theme 'vscode)
-  (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-use-custom-font t))
+  (setq dired-sidebar-use-term-integration t))
+  ;; (setq dired-sidebar-use-custom-font t))
 
-; page navigation without arrows
+;; page navigation without arrows
 (global-set-key (kbd "M-<down>") 'scroll-up-command)
 (global-set-key (kbd "M-<up>") 'scroll-down-command)
 
-(add-hook 'prog-mode-hook
-          (lambda() (local-set-key (kbd "C-<") #'comment-region)))
-(add-hook 'prog-mode-hook
-          (lambda() (local-set-key (kbd "C->") #'uncomment-region)))

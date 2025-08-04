@@ -1,10 +1,13 @@
+;;; -*- elisp -*-
+;;; Commentary
+
+;;; Code:
 (use-package markdown-mode
   :ensure t
   :mode (("\\.text\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)
          ("\\.md\\'" . markdown-mode))
   :hook ((markdown-mode . ar/markdown-mode-hook)
-         (markdown-mode . ar/whitespace-mode-enable)
          (markdown-mode . auto-fill-mode))
   :custom (markdown-asymmetric-header t)
   :bind (:map
@@ -16,6 +19,7 @@
   :config
   (defun ar/markdown-mode-hook ()
     "Called when entering `markdown-mode'."
+<<<<<<< HEAD
     (set-fill-column 80)
     (markdown-toggle-inline-images))
 
@@ -34,3 +38,6 @@
   (advice-add #'markdown-demote
               :around
               #'adviced:markdown-demote))
+=======
+    (set-fill-column 80)))
+>>>>>>> d44787e (docker markdown and behaviour changes)

@@ -52,6 +52,14 @@
 (require 'use-package)
 ;; (setq use-package-verbose t)
 
+;; ;; Update packages
+;; (use-package auto-package-update
+;;    :ensure t
+;;    :config
+;;    (setq auto-package-update-delete-old-versions t
+;;          auto-package-update-interval 180)
+;;    (auto-package-update-maybe))
+
 ;; load stuff in elisp folder
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elisp/")
 (setq custom-theme-directory "~/.emacs.d/themes")

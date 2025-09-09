@@ -1,6 +1,19 @@
+;; Bell
+(setq ring-bell-function 'ignore)
+(setq visible-bell t)
+
+;; Cursor
+(setq blink-cursor-mode nil)
+
 ;;;; Indentation
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil) ;; use spaces
 (setq tab-width 4) ; or any other preferred value
+
+(setq backward-delete-char-untabify nil)
+
+;; Don't get weird properties when pasting
+(setq yank-excluded-properties t)
+
 
 ;; Use y/n instead of yes/no confirms.
 ;; From http://pages.sachachua.com/.emacs.d/Sacha.html#sec-1-4-8
@@ -9,6 +22,10 @@
 (use-package menu-bar
   ;; No need to confirm killing buffers.
   :bind ("C-x k" . kill-current-buffer))
+
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+
 
 (use-package face-remap
   :bind(("C-+" . text-scale-increase)
@@ -54,4 +71,71 @@
 (global-set-key (kbd "M-<down>") 'scroll-up-command)
 (global-set-key (kbd "M-<up>") 'scroll-down-command)
 
-(electric-pair-mode 1)
+;; syntax highlight everywhere
+(global-font-lock-mode t)
+
+;; Don't ever use graphic dialog boxes
+(setq use-dialog-box nil)
+
+
+;; Don't open new annoying windows under X, use the echo area
+(tooltip-mode -1)
+
+
+;; Parenthesis
+;(electric-pair-mode 1)
+;; Show matching parens
+(show-paren-mode t)
+(setq show-paren-style 'expression)
+(setq show-paren-delay 0.0)
+
+(setq skeleton-pair t)
+(setq skeleton-pair-on-word t) ; apply skeleton trick even in front of a word.                                               
+(global-set-key "[" 'skeleton-pair-insert-maybe)
+(global-set-key "{" 'skeleton-pair-insert-maybe)
+(global-set-key "(" 'skeleton-pair-insert-maybe)
+(global-set-key "\"" 'skeleton-pair-insert-maybe)
+
+
+;;;; Timestamps
+(add-hook 'before-save-hook 'time-stamp)
+(setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S %U")
+
+(defun skeleton-time-stamp (dminus)
+  "Inserts current time-stamp, formatted yyyy.mm.dd hh:mm.
+   Optional argument reduces the day (by a negative quantity also)"
+  (interactive "P")
+  (require 'calendar)
+  (if (and (listp dminus) (not (null dminus)))   ; C-u w/o prefix gives '(4) --> this sets dminus to (log_2 4)/2 = 1
+      (setq dminus (truncate (/ (log (car dminus) 2) 2))) 
+    (if (eq dminus nil)
+	(setq dminus 0)))
+  (setq dminus (- 0 dminus))
+  (setq datatmp (dm/get-any-date (calendar-current-date) dminus))
+  (insert (concat (int-to-string (extract-calendar-year datatmp)) "."))
+  (let ((l (extract-calendar-month datatmp)))
+    (if (< l 10)
+	(insert (concat "0" (int-to-string l)))
+      (insert (int-to-string l))))
+  (insert ".")
+  (let ((l (extract-calendar-day datatmp)))
+    (if (< l 10)
+	(insert (concat "0" (int-to-string l)))
+      (insert (int-to-string l))))
+  (insert " ")
+  (insert (truncate-string-to-width (time-stamp-string) 20 15)))
+
+(defun scratch-buffer nil
+  "create a new scratch buffer to work in. (could be *scratch* - *scratchX*)"
+  (interactive)
+  (let ((n 0)
+	bufname)
+    (while (progn
+	     (setq bufname (concat "*scratch"
+				   (if (= n 0) "" (int-to-string n))
+				   "*"))
+	     (setq n (1+ n))
+	     (get-buffer bufname)))
+    (switch-to-buffer (get-buffer-create bufname))
+    (lisp-interaction-mode) ; 1, because n was incremented
+    (insert ";; This buffer is for notes you don't want to save, and for Lisp evaluation.\n;; If you want to create a file, visit that file with C-x C-f,\n;; then enter the text in that file's own buffer.\n")))

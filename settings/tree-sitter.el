@@ -16,7 +16,7 @@
      (python "https://github.com/tree-sitter/tree-sitter-python")
      (rust "https://github.com/tree-sitter/tree-sitter-rust")))
 
-;; check for updates to the above repositories once per week
+;; check for updates to the above repositories once per 6 months
 (defun dm/update-tree-sitter ()
   "Run a specific command once every 30 days."
   (let ((last-run-file "~/.emacs.d/tree-sitter-last-update"))
@@ -24,7 +24,7 @@
         (let ((last-run-date (with-temp-buffer
                                (insert-file-contents last-run-file)
                                (read (buffer-string)))))
-          (if (> (- (float-time (current-time)) (float-time last-run-date)) (* 30 24 60 60))
+          (if (> (- (float-time (current-time)) (float-time last-run-date)) (* 180 24 60 60))
               (progn
                 (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist))
                 (with-temp-buffer

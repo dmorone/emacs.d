@@ -72,27 +72,22 @@
                     :height 120)
 
 
-(use-package frame
-  :defer
-  :init
-  ;; Mispressing C-z invokes `suspend-frame' (disable).
-  (global-unset-key (kbd "C-z"))
-  :config
-  ;; Enable expanding frame to end of screen.
-  (setq frame-resize-pixelwise t)
-  ;; Remove thin border. Visible since Monterey.
-  (set-frame-parameter nil 'internal-border-width 0)
-  ;; (set-frame-position (selected-frame) 220 100)
-  (set-frame-size (selected-frame) 150 40)
-  ;; https://christiantietze.de/posts/2022/04/emacs-center-window-current-monitor-simplified/
-  (defun my/frame-recenter (&optional frame)
+(setq default-frame-alist
+      '((top . 220) (left . 100)
+        (width . 150) (height . 40)))
+
+(setq initial-frame-alist '((top . 10) (left . 30)))
+
+(defun my/frame-recenter (&optional frame)
   "Center FRAME on the screen.
 FRAME can be a frame name, a terminal name, or a frame.
 If FRAME is omitted or nil, use currently selected frame."
   (interactive)
   (unless (eq 'maximised (frame-parameter nil 'fullscreen))
     (modify-frame-parameters
-     frame '((user-position . t) (top . 0.5) (left . 0.5))))))
+     frame '((user-position . t) (top . 0.5) (left . 0.5)))))
+
+(setq after-make-frame-functions 'my/frame-recenter)
 
 ;; High readbility theme
 (load-theme 'alabaster t)

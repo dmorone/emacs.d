@@ -30,13 +30,14 @@
     ;; https://coffeeandcode.neocities.org/emacs-keyboard-config-on-mac.html
     :bind ("M-2" . dm/macos-insert-at)
     :bind ("M-3" . ar/macos-insert-hash)
-    :bind ("M-7" . dm/macos-insert-backslash)
+    :bind ("M-7" . dm/macos-insert-pipe)
     :bind ("M-n" . dm/macos-insert-tilde)
     :bind ("M-g" . dm/macos-insert-at)
     :bind ("M-5" . dm/macos-insert-sqleft)
     :bind ("M-6" . dm/macos-insert-sqright)
     :bind ("M-8" . dm/macos-insert-curlyleft)
     :bind ("M-9" . dm/macos-insert-curlyright)
+    :bind ("M-/" . dm/macos-insert-backslash)
     :config
     (defun ar/macos-insert-hash ()
       (interactive)
@@ -64,7 +65,10 @@
       (insert "}"))
     (defun dm/macos-insert-at ()
       (interactive)
-      (insert "@")))
+      (insert "@"))
+    (defun dm/macos-insert-pipe ()
+      (interactive)
+      (insert "|")))
   
   ;; macOS color picker.
   (use-package color-picker

@@ -126,7 +126,7 @@
   (insert (truncate-string-to-width (time-stamp-string) 20 15)))
 
 (defun scratch-buffer nil
-  "create a new scratch buffer to work in. (could be *scratch* - *scratchX*)"
+  "Create a new scratch buffer to work in.  (could be *scratch* - *scratchX*)"
   (interactive)
   (let ((n 0)
 	bufname)
@@ -137,5 +137,29 @@
 	     (setq n (1+ n))
 	     (get-buffer bufname)))
     (switch-to-buffer (get-buffer-create bufname))
-    (lisp-interaction-mode) ; 1, because n was incremented
-    (insert ";; This buffer is for notes you don't want to save, and for Lisp evaluation.\n;; If you want to create a file, visit that file with C-x C-f,\n;; then enter the text in that file's own buffer.\n")))
+    (text-mode)))
+
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+             (next-win-buffer (window-buffer (next-window)))
+             (this-win-edges (window-edges (selected-window)))
+             (next-win-edges (window-edges (next-window)))
+             (this-win-2nd (not (and (<= (car this-win-edges)
+                                         (car next-win-edges))
+                                     (<= (cadr this-win-edges)
+                                         (cadr next-win-edges)))))
+             (splitter
+              (if (= (car this-win-edges)
+                     (car (window-edges (next-window))))
+                  'split-window-horizontally
+                'split-window-vertically)))
+        (delete-other-windows)
+        (let ((first-win (selected-window)))
+          (funcall splitter)
+          (if this-win-2nd (other-window 1))
+          (set-window-buffer (selected-window) this-win-buffer)
+          (set-window-buffer (next-window) next-win-buffer)
+          (select-window first-win)
+          (if this-win-2nd (other-window 1))))))

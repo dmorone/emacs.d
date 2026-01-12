@@ -22,6 +22,28 @@
 ;; No Alarms by default.
 (setq ring-bell-function 'ignore)
 
+
+;; Frame positioning
+(setq default-frame-alist
+      '((top . 220) (left . 100) ; default size
+        (width . 150) (height . 40)))
+
+(setq initial-frame-alist '((top . 10) (left . 30))) ; fallback settings if function below is not invoked
+
+(defun my/frame-recenter (&optional frame)
+  "Center FRAME on the screen.
+FRAME can be a frame name, a terminal name, or a frame.
+If FRAME is omitted or nil, use currently selected frame."
+  (interactive)
+  (unless (eq 'maximised (frame-parameter nil 'fullscreen))
+    (modify-frame-parameters
+     frame '((user-position . t) (top . 0.5) (left . 0.5)))))
+
+(setq after-make-frame-functions 'my/frame-recenter) ; center new frames
+
+(add-hook 'window-setup-hook 'my/frame-recenter) ; center startup frame
+
+;; login logo
 (defun ar/show-welcome-buffer ()
   "Show *Welcome* buffer."
   (with-current-buffer (get-buffer-create "*Welcome*")
@@ -72,22 +94,6 @@
                     :height 120)
 
 
-(setq default-frame-alist
-      '((top . 220) (left . 100)
-        (width . 150) (height . 40)))
-
-(setq initial-frame-alist '((top . 10) (left . 30)))
-
-(defun my/frame-recenter (&optional frame)
-  "Center FRAME on the screen.
-FRAME can be a frame name, a terminal name, or a frame.
-If FRAME is omitted or nil, use currently selected frame."
-  (interactive)
-  (unless (eq 'maximised (frame-parameter nil 'fullscreen))
-    (modify-frame-parameters
-     frame '((user-position . t) (top . 0.5) (left . 0.5)))))
-
-(setq after-make-frame-functions 'my/frame-recenter)
 
 ;; High readbility theme
 (load-theme 'alabaster t)

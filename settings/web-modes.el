@@ -31,3 +31,8 @@
 (use-package impatient-mode
   :ensure t
   :commands impatient-mode)
+
+
+(use-package nginx-mode
+  :ensure t
+  :commands nginx-mode)

@@ -15,10 +15,10 @@
                          dired-sidebar docker ess exec-path-from-shell
                          flycheck git-commit git-identity git-modes
                          git-timemachine haskell-mode hide-mode-line
-                         impatient-mode jenkinsfile-mode magit
-                         markdown-mode material-theme moody nginx-mode
-                         nyan-mode powershell rust-mode ssh-agency
-                         web-mode wgrep yaml-mode)))
+                         impatient-mode jenkinsfile-mode llm-ollama
+                         magit markdown-mode material-theme moody
+                         nginx-mode nyan-mode powershell rust-mode
+                         ssh-agency web-mode wgrep yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

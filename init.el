@@ -85,6 +85,7 @@
 (load "~/.emacs.d/settings/csv.el")
 (load "~/.emacs.d/settings/haskell.el")
 (load "~/.emacs.d/settings/rust.el")
-(load "~/.emacs.d/settings/flycheck.el")
+(load "~/.emacs.d/settings/flyspell.el")
+;(load "~/.emacs.d/settings/flycheck.el")
 (load "~/.emacs.d/settings/tree-sitter.el")
 (load "~/.emacs.d/settings/ollama.el")

@@ -24,3 +24,18 @@
   (keymap-set completion-preview-active-mode-map "M-p" #'completion-preview-prev-candidate)
   ;; Convenient alternative to C-i after typing one of the above
   (keymap-set completion-preview-active-mode-map "M-i" #'completion-preview-insert))
+
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode)
+  (with-eval-after-load 'company
+    (define-key company-active-map
+                (kbd "TAB")
+                #'company-complete-common-or-cycle)
+    (define-key company-active-map
+                (kbd "<backtab>")
+                (lambda ()
+                  (interactive)
+                  (company-complete-common-or-cycle -1))))
+  (setq company-tooltip-align-annotations t))

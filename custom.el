@@ -14,17 +14,23 @@
    '(auto-package-update browse-at-remote company csv-mode dhall-mode
                          diff-hl dired-sidebar docker ess
                          exec-path-from-shell flycheck
-                         flyspell-correct-ido git-commit git-identity
-                         git-modes git-timemachine haskell-mode
-                         hide-mode-line impatient-mode
-                         jenkinsfile-mode llm-ollama magit
-                         markdown-mode material-theme moody
-                         multiple-cursors nginx-mode nyan-mode
+                         flycheck-languagetool flyspell-correct-ido
+                         git-commit git-identity git-modes
+                         git-timemachine haskell-mode hide-mode-line
+                         impatient-mode jenkinsfile-mode languagetool
+                         llm-ollama magit markdown-mode material-theme
+                         moody multiple-cursors nginx-mode nyan-mode
                          powershell rust-mode ssh-agency web-mode
-                         wgrep yaml-mode)))
+                         wgrep whitespace-mode yaml-mode yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(whitespace-missing-newline-at-eof ((t (:foreground "gray"))))
+ '(whitespace-newline ((t (:foreground "gray"))))
+ '(whitespace-space ((t (:foreground "gray"))))
+ '(whitespace-space-after-tab ((t (:foreground "gray" :background "red"))))
+ '(whitespace-space-before-tab ((t (:foreground "gray" :background "red"))))
+ '(whitespace-tab ((t (:foreground "gray"))))
+ '(whitespace-trailing ((t (:foreground "gray")))))

@@ -139,3 +139,29 @@ If FRAME is omitted or nil, use currently selected frame."
   :ensure t
   :init
   (nyan-mode))
+
+;; Define the whitespace style.
+(setq-default whitespace-style
+              '(face spaces empty tabs newline trailing space-mark tab-mark newline-mark))
+;; Whitespace color corrections.
+(custom-set-faces
+ `(whitespace-newline                ((t (:foreground "gray"))))
+ `(whitespace-missing-newline-at-eof ((t (:foreground "gray"))))
+ `(whitespace-space                  ((t (:foreground "gray"))))
+ `(whitespace-space-after-tab        ((t (:foreground "gray" :background "red"))))
+ `(whitespace-space-before-tab       ((t (:foreground "gray" :background "red"))))
+ `(whitespace-tab                    ((t (:foreground "gray"))))
+ `(whitespace-trailing               ((t (:foreground "gray")))))
+;; Make these characters represent whitespace.
+(setq-default whitespace-display-mappings
+              '(
+                ;; space -> · else .
+                (space-mark 32 [183] [46])
+                ;; new line -> ¬ else $
+                (newline-mark ?\n [172 ?\n] [36 ?\n])
+                ;; carriage return (Windows) -> ¶ else #
+                (newline-mark ?\r [182] [35])
+                ;; tabs -> » else >
+                (tab-mark ?\t [187 ?\t] [62 ?\t])))
+
+

@@ -1,2 +1,3 @@
 (use-package powershell
-  :ensure t)
+  :ensure t
+  :mode ("\\.ps1"))

@@ -75,7 +75,7 @@ If FRAME is omitted or nil, use currently selected frame."
 (setq inhibit-startup-screen t)
 
 (when (< (length command-line-args) 2)
-  (add-hook 'emacs-startup-hook (lambda ()
+  (add-hook 'window-setup-hook (lambda ()
                                   (when (display-graphic-p)
                                     (ar/show-welcome-buffer)))))
 
@@ -165,3 +165,11 @@ If FRAME is omitted or nil, use currently selected frame."
                 (tab-mark ?\t [187 ?\t] [62 ?\t])))
 
 
+(defun efs/display-startup-time ()
+  (message "Emacs loaded in %s with %d garbage collections."
+           (format "%.2f seconds"
+                   (float-time
+                   (time-subtract after-init-time before-init-time)))
+           gcs-done))
+
+(add-hook 'emacs-startup-hook #'efs/display-startup-time)

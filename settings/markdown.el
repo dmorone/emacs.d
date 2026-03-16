@@ -15,8 +15,6 @@
          markdown-mode-map
          ("M-<left>" . markdown-promote)
          ("M-<right>" . markdown-demote)
-         ("M-[" . markdown-promote)
-         ("M-]" . markdown-demote)
          ("M-$" . whitespace-mode))
   :config
   (defun ar/markdown-mode-hook ()

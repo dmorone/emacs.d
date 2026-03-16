@@ -1,7 +1,5 @@
 (use-package haskell-mode
-  :defer
   :ensure t
-  :init
   :mode (("\\.ghci\\'" . haskell-mode))
   :config
 
@@ -25,22 +23,20 @@
   (with-eval-after-load 'page-break-lines
     (add-to-list 'page-break-lines-modes 'haskell-mode)))
 
-(use-package dhall-mode
-  :defer
-  :ensure t
-  :init)
+;; (use-package dhall-mode
+;;   :defer
+;;   :ensure t)
 
-(use-package reformatter
-  :defer
-  :ensure t
-  :init
-  :config
-  (reformatter-define hindent
-                      :program "hindent"
-                      :lighter " Hin")
+;; (use-package reformatter
+;;   :defer
+;;   :ensure t
+;;   :config
+;;   (reformatter-define hindent
+;;                       :program "hindent"
+;;                       :lighter " Hin")
 
-  (defalias 'hindent-mode 'hindent-on-save-mode)
+;;   (defalias 'hindent-mode 'hindent-on-save-mode)
 
-  (reformatter-define ormolu
-                      :program "ormolu"
-                      :lighter " Orm"))
+;;   (reformatter-define ormolu
+;;                       :program "ormolu"
+;;                       :lighter " Orm"))

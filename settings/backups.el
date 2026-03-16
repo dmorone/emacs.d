@@ -15,3 +15,6 @@
           `((".*" ,temporary-file-directory t)))
 
 ;; (setq make-backup-files nil) ; Prevent all backups
+
+
+(setq create-lockfiles nil)

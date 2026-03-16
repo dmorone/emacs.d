@@ -11,17 +11,14 @@
      default))
  '(org-fold-catch-invisible-edits 'error nil nil "Customized with use-package org")
  '(package-selected-packages
-   '(auto-package-update browse-at-remote company csv-mode dhall-mode
-                         diff-hl dired-sidebar docker ess
-                         exec-path-from-shell flycheck
-                         flycheck-languagetool flyspell-correct-ido
-                         git-commit git-identity git-modes
-                         git-timemachine haskell-mode hide-mode-line
-                         impatient-mode jenkinsfile-mode languagetool
-                         llm-ollama magit markdown-mode material-theme
-                         moody multiple-cursors nginx-mode nyan-mode
-                         powershell rust-mode ssh-agency web-mode
-                         wgrep whitespace-mode yaml-mode yasnippet)))
+   '(browse-at-remote company csv-mode dhall-mode diff-hl
+                      dired-hide-dotfiles dired-open dired-sidebar
+                      dockerfile-mode ellama ess flycheck git-commit
+                      git-identity git-modes git-timemachine gnugo
+                      gptel haskell-mode hide-mode-line impatient-mode
+                      jenkinsfile-mode magit markdown-mode moody
+                      multiple-cursors nginx-mode nyan-mode powershell
+                      rust-mode ssh-agency web-mode wgrep yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

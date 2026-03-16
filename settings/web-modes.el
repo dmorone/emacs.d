@@ -28,11 +28,11 @@
 
 ;; If you are editing HTML that references resources in other files (like CSS) you can enable impatient-mode on those buffers as well. This will cause your browser to live refresh the page when you edit a referenced resource.
 
-(use-package impatient-mode
-  :ensure t
-  :commands impatient-mode)
+;; (use-package impatient-mode
+;;   :ensure t
+;;   :commands impatient-mode)
 
 
-(use-package nginx-mode
-  :ensure t
-  :commands nginx-mode)
+;; (use-package nginx-mode
+;;   :ensure t
+;;   :commands nginx-mode)

@@ -8,7 +8,6 @@
 (setq lemacs-docker-executable 'docker)
 
 (use-package docker
-	:defer t
 	:ensure t
 	:bind ("C-c d" . docker)
 	:config
@@ -23,7 +22,8 @@
 			 docker-container-tramp-method "podman"))))
 
 (use-package dockerfile-mode
-  :defer t
+  :mode
+  ("Dockerfile")
   :ensure t
   :config
   (pcase lemacs-docker-executable
@@ -33,7 +33,6 @@
 	 (setq dockerfile-docker-command "podman"))))
 
 (use-package yaml-mode
-  :defer t
   :ensure t
   :mode
   ("\\.yaml\\'" "\\.yml\\'")

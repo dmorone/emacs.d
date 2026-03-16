@@ -75,6 +75,7 @@
 (load "~/.emacs.d/settings/orgmode.el")
 (load "~/.emacs.d/settings/git.el")
 (load "~/.emacs.d/settings/eglot.el")
+(load "~/.emacs.d/settings/xml.el")
 ;; Plugins
 (load "~/.emacs.d/settings/jenkinsfile.el")
 (load "~/.emacs.d/settings/markdown.el")

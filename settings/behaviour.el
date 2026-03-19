@@ -134,3 +134,11 @@
   :config
   (global-set-key (kbd "C-x C-.") 'mc/mark-all-like-this))
 
+
+;; Load bookmarks
+(bookmark-load "~/.emacs.d/bookmarks" t)
+
+(defun my/switch-project-bookmarks ()
+  (setq bookmark-default-file 
+        (concat (projectile-project-root) ".bookmarks"))
+  (bookmark-load bookmark-default-file t))

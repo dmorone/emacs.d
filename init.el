@@ -76,9 +76,7 @@
 (load "~/.emacs.d/settings/orgmode.el")
 (load "~/.emacs.d/settings/git.el")
 (load "~/.emacs.d/settings/xml.el")
-(load "~/.emacs.d/settings/spelling.el")
 ;; Plugins
-
 (load "~/.emacs.d/settings/jenkinsfile.el")
 (load "~/.emacs.d/settings/markdown.el")
 (load "~/.emacs.d/settings/powershell.el")
@@ -89,6 +87,7 @@
 (load "~/.emacs.d/settings/haskell.el")
 (load "~/.emacs.d/settings/rust.el")
 (load "~/.emacs.d/settings/tree-sitter.el")
+(load "~/.emacs.d/settings/eglot.el")
 (load "~/.emacs.d/settings/ollama.el")
 (load "~/.emacs.d/settings/reading.el")
 ;(load "~/.emacs.d/settings/flycheck.el")

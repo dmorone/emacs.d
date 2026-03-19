@@ -10,7 +10,18 @@
      "65e56b533de4a739e09561c357e78dc971e6b8c4617d3f49848419eaccba7b7d"
      default))
  '(org-fold-catch-invisible-edits 'error nil nil "Customized with use-package org")
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(artbollocks-mode auto-package-update browse-at-remote company
+                      csv-mode dhall-mode diff-hl dired-sidebar docker
+                      dockerfile-mode ellama ess exec-path-from-shell
+                      flycheck-languagetool git-identity git-modes
+                      git-timemachine google-translate gptel
+                      haskell-mode hide-mode-line impatient-mode
+                      jenkinsfile-mode languagetool magit
+                      markdown-mode material-theme moody
+                      multiple-cursors nginx-mode nov nyan-mode
+                      powershell pyvenv rust-mode ssh-agency
+                      synosaurus web-mode wgrep yaml-mode yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

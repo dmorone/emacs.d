@@ -14,6 +14,11 @@
 ;; From http://pages.sachachua.com/.emacs.d/Sacha.html#sec-1-4-8
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Classic meta problem
+(when (eq system-type 'darwin)
+  (setq mac-function-modifier 'meta)
+  (setq mac-option-modifier nil))
+
 (use-package menu-bar
   ;; No need to confirm killing buffers.
   :bind ("C-x k" . kill-current-buffer))

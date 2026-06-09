@@ -71,6 +71,7 @@
 (load "~/.emacs.d/settings/behaviour.el")
 (load "~/.emacs.d/settings/mac.el")
 ;; Built-in
+(load "~/.emacs.d/settings/dired.el")
 (load "~/.emacs.d/settings/macros.el")
 (load "~/.emacs.d/settings/completion.el")
 (load "~/.emacs.d/settings/orgmode.el")

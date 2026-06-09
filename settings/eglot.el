@@ -1,6 +1,14 @@
+;; Note install these language servers (brew)
+;; - harper (grammar)
+;; - ty (python)
+;; - bash-language-server (bash)
+;; - llvm (contains clangd for C)
+;; - yaml-language-server (YAML)
+;; Note: YAML-MODE should connect automatically to yaml-language-server if installed
+
 (use-package eglot
   :ensure t
-  :hook ((text-mode markdown-mode org-mode python-mode python-ts-mode bash-mode bash-ts-mode java-mode java-ts-mode java-ts-mode c-mode c-ts-mode) . eglot-ensure)
+  :hook ((text-mode markdown-mode org-mode python-mode python-ts-mode bash-mode bash-ts-mode java-mode java-ts-mode java-ts-mode c-mode c-ts-mode yaml-mode yaml-ts-mode) . eglot-ensure)
   :bind
   (:map eglot-mode-map
         ("M-l r" . eglot-rename)
@@ -12,9 +20,6 @@
   ;; grammar check
   (setq-default eglot-workspace-configuration
                 '(:harper-ls (:dialect "British")))
-  (with-eval-after-load 'eglot
-    (add-to-list 'eglot-server-programs
-                 '(text-mode . ("harper-ls" "--stdio"))))
   (with-eval-after-load 'eglot
     (add-to-list 'eglot-server-programs
                  '(org-mode . ("harper-ls" "--stdio"))))

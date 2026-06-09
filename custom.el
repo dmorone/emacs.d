@@ -13,10 +13,11 @@
  '(package-selected-packages
    '(artbollocks-mode auto-package-update browse-at-remote company
                       csv-mode dhall-mode diff-hl dired-sidebar docker
-                      dockerfile-mode ellama ess exec-path-from-shell
-                      flycheck-languagetool git-identity git-modes
-                      git-timemachine google-translate gptel
-                      haskell-mode hide-mode-line impatient-mode
+                      dockerfile-mode eglot-yaml ellama ess
+                      exec-path-from-shell flycheck-languagetool
+                      git-identity git-modes git-timemachine
+                      google-translate gptel haskell-mode
+                      hide-mode-line imenu-list impatient-mode
                       jenkinsfile-mode languagetool magit
                       markdown-mode material-theme moody
                       multiple-cursors nginx-mode nov nyan-mode

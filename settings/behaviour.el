@@ -142,3 +142,11 @@
   (setq bookmark-default-file 
         (concat (projectile-project-root) ".bookmarks"))
   (bookmark-load bookmark-default-file t))
+
+;; Right side menu
+(use-package imenu-list
+  :ensure t
+  :config
+  (setq imenu-list-focus-after-activation t
+        imenu-list-auto-resize nil)
+  (global-set-key (kbd "C-'") #'imenu-list-smart-toggle))

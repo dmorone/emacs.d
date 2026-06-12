@@ -19,7 +19,29 @@
   (setq eglot-stay-out-of '(company))
   ;; grammar check
   (setq-default eglot-workspace-configuration
-                '(:harper-ls (:dialect "British")))
+                '(:harper-ls (:userDictPath ""
+                                            :workspaceDictPath ""
+                                            :fileDictPath ""
+                                            :linters (:SpellCheck :json-false
+                                                                  :SpelledNumbers :json-false
+                                                                  :AnA t
+                                                                  :SentenceCapitalization :json-false
+                                                                  :UnclosedQuotes t
+                                                                  :WrongQuotes :json-false
+                                                                  :LongSentences t
+                                                                  :RepeatedWords t
+                                                                  :Spaces t
+                                                                  :Matcher t
+                                                                  :CorrectNumberSuffix t)
+                                            :codeActions (:ForceStable :json-false)
+                                            :markdown (:IgnoreLinkTitle :json-false)
+                                            :diagnosticSeverity "hint"
+                                            :isolateEnglish :json-false
+                                            :dialect "British"
+                                            :maxFileLength 120000
+                                            :ignoredLintsPath ""
+                                            :excludePatterns [])))
+  
   (with-eval-after-load 'eglot
     (add-to-list 'eglot-server-programs
                  '(org-mode . ("harper-ls" "--stdio"))))

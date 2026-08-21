@@ -8,7 +8,7 @@
 
 (use-package eglot
   :ensure t
-  :hook ((markdown-mode org-mode python-mode python-ts-mode bash-mode bash-ts-mode java-mode java-ts-mode java-ts-mode c-mode c-ts-mode) . eglot-ensure)
+  :hook ((python-mode python-ts-mode bash-mode bash-ts-mode java-mode java-ts-mode java-ts-mode c-mode c-ts-mode) . eglot-ensure)
   :bind
   (:map eglot-mode-map
         ("M-l r" . eglot-rename)

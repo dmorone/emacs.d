@@ -1,5 +1,11 @@
 ;; -*- lexical binding: t; -*-
 
+;; Timer package. Examples
+;; - 5s    5 seconds
+;; - 5     5 minutes
+;; - 1.5h  1 hour 30 minutes
+;; - 5m    5 minutes
+
 (defun my-macos-notify (timer)
   (let* ((description (or (tmr--timer-description timer) ""))
          (sanitized-body (substring-no-properties description))
@@ -11,6 +17,7 @@
 
 (remove-hook 'tmr-timer-finished-functions #'tmr-notification-notify)
 (add-hook 'tmr-timer-finished-functions #'my-macos-notify)
+
 
 (use-package tmr
   :ensure t

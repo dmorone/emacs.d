@@ -155,3 +155,11 @@
   (setq imenu-list-focus-after-activation t
         imenu-list-auto-resize nil)
   (global-set-key (kbd "C-'") #'imenu-list-smart-toggle))
+
+;; view mode
+(setq view-read-only t)
+
+;; do what I mean
+(global-set-key (kbd "M-u") 'upcase-dwim)
+(global-set-key (kbd "M-l") 'downcase-dwim)
+(global-set-key (kbd "M-c") 'capitalize-dwim)
